@@ -2,6 +2,24 @@
 
 A responsive world clock web application built with React + Express + MongoDB + D3, consuming geodata and weather APIs to display analog and digital clocks for over 10000 cities
 
+## Installation
+1. Set your MongoDB connection string as environment variable.
+e.g. In `.env` file,
+```bash
+   ATLAS_URI = #ATLAS_URI=#mongodb+srv://<username>:<password>@host/<database>?<options>
+```
+
+2. 
+```bash
+npm install
+npm run start
+```
+
+3. When geodata is inserted into DB, access the app at http://localhost:3000
+
+* Frontend: `http://localhost:3000`
+* Backend: `hhtp://localhost:4000`
+
 ## Functionalities
 
 * Animated analog clocks visualized with trigonometry and timezone API
