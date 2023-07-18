@@ -1,0 +1,51 @@
+  //    /* Fetch client location API */
+  //     fetch(`https://ipapi.co/json/`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //         let geoData =data;
+  //         currentCity(geoData);
+  //     });
+
+  // /* display clock by client ip address */
+  // async function currentCity(geoData) {
+  //     geoData["name"] = geoData.city + " ⌂";
+  //     geoData["country"] = geoData.country_name;
+  //     geoData["coordinates"] = { "lat": geoData.latitude, "lon":geoData.longitude}
+  //     geoData["population"] = geoData.country_population
+
+  //     setViewArray([geoData, ...viewArray])
+  //     axios.post(`http://localhost:4000/`, geoData)
+  //     .then(data => console.log(data))
+  // }
+
+
+
+
+
+
+          // if (query.length > 0) {
+        //     /* data with all cities with population >30000 geodata json */
+        //     //Source: https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/table/?disjunctive.cou_name_en&sort=name
+        //     fetch("/data/geo30000.json")
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         //query match
+        //         let y = data.filter(x=>
+        //             removeAccents(x.name.toLowerCase()).startsWith(query))
+
+        //         //sort by population size & limit result
+        //         y = y.sort((a, b) => {
+        //             if (a.population < b.population)
+        //                 return 1;
+        //             if (a.population > b.population)
+        //                 return -1;
+        //             return 0;
+        //         }).slice(0, num_search);
+
+        //         //index
+        //         y = y.map((x, i)=> {return {searchid: i, ...x}})
+
+        //         setSearchList(y)  
+        //         setLoading(false)  
+        //     })
+        // }
