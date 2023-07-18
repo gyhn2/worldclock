@@ -1,6 +1,6 @@
 # worldclock
 
-A responsive world clock web application built with React + Express + MongoDB + D3, consuming geodata and weather APIs to display analog and digital clocks for over 10000 cities
+A responsive world clock web application built with React + Express + MongoDB + D3. Consuming geodata and weather APIs to display analog and digital clocks for over 10000 cities
 
 ## Installation
 1. Set your MongoDB connection string as environment variable for the backend server.
