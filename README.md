@@ -9,13 +9,13 @@ e.g. In `.env` file,
    ATLAS_URI = #ATLAS_URI=#mongodb+srv://<username>:<password>@host/<database>?<options>
 ```
 
-2. 
+2. Install dependencies and run the app
 ```bash
 npm install
 npm run start
 ```
 
-3. When geodata is inserted into DB, access the app at http://localhost:3000
+3. When geodata file is read and inserted into DB, the app will be accessible at http://localhost:3000
 
 * Frontend: `http://localhost:3000`
 * Backend: `hhtp://localhost:4000`
