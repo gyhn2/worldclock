@@ -4,7 +4,7 @@ A responsive world clock web application built with React + Express + MongoDB + 
 
 ## Installation
 1. Set your MongoDB connection string as environment variable for the backend server.
-e.g. In `.env` file,
+e.g. In `.env` file under the `backend` directory,
 ```bash
    ATLAS_URI = #ATLAS_URI=#mongodb+srv://<username>:<password>@host/<database>?<options>
 ```
