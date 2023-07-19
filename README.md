@@ -4,8 +4,8 @@ A responsive world clock web application built with React + Express + MongoDB + 
 
 * [Demo](https://worldclock-frontend.vercel.app/)
 
+<img width="700" alt="SSHOT" src="https://github.com/gyhn2/worldclock/assets/80073085/49905270-2f8a-4d45-856d-6001fdad14a7">
 
-<img width="700" alt="Screenshot 2023-07-19 at 7 53 29 AM" src="https://github.com/gyhn2/worldclock/assets/80073085/52cf9212-c3fd-4859-bd94-1ccaad98198b">
 
 ## Installation
 1. Set your MongoDB connection string as environment variable for the backend server.
