@@ -1,11 +1,8 @@
 # worldclock
 
-A responsive world clock web application built with React + Express + MongoDB + D3. Consuming geodata and weather APIs to display analog and digital clocks for over 10000 cities
+A responsive world clock web application built with React + Express + MongoDB + D3. Consuming geodata and weather APIs to display analog and digital clocks for over 10000 cities.
 
 <img width="700" alt="Screenshot 2023-07-18 at 7 26 58 PM" src="https://github.com/gyhn2/worldclock/assets/80073085/cbd3836b-f1ae-4fc0-8d11-b99e769cb8c2">
-
-Mobile view
-<img width="200" alt="Screenshot 2023-07-18 at 8 23 26 PM" src="https://github.com/gyhn2/worldclock/assets/80073085/ce3d3676-b713-43d5-a10c-e4c80f48660f">
 
 
 ## Installation
@@ -42,3 +39,9 @@ npm run start
 * MongoDB
 
 ## API
+
+
+
+## Mobile view
+
+![IMG_0561](https://github.com/gyhn2/worldclock/assets/80073085/fcb60283-fa54-483c-b338-64a91cde2774)
