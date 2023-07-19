@@ -252,6 +252,7 @@ footer {
         display: block;
     }
     .search-group {
+        width: 30rem;
         max-width: 90%;
         margin: 1rem auto;
     }
