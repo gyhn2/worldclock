@@ -14,7 +14,7 @@ e.g. In `.env` file under the `backend` directory,
    ATLAS_URI=mongodb+srv://<username>:<password>@<host>/<database>?<options>
 ```
 
-2. Install dependencies and run the app in the root directory
+2. In the root directory, install dependencies and run the app 
 ```bash
 npm install
 npm run start
