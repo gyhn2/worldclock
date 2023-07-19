@@ -16,9 +16,13 @@
 #root {
   height: 100%;
   width: 100%;
-  background-size: cover;
+  background-color:  rgb(254, 255, 229)
+
+  /* alternate */
+  /* background-size: cover;
   background-attachment: fixed;
-  background-image: linear-gradient(to bottom, rgb(254, 255, 229) 0%, rgb(255, 235, 191) 100%);
+  background-image: linear-gradient(to bottom, rgb(254, 255, 229) 0%, rgb(255, 235, 191) 100%); */
+
 }
 
 .all {
