@@ -34,13 +34,13 @@ npm run start
 
 ## Framework + Programs + Libraries
 
-[x] React.js
-[x] Express.js
-[x] Node.js
-[x] D3.js
-[x] MongoDB
-[x] Mongoose
-[x] Axios
+* React.js
+* Express.js
+* Node.js
+* D3.js
+* MongoDB
+* Mongoose
+* Axios
 
 ## API
 * [Daylight info](https://sunrisesunset.io/api/)
