@@ -30,7 +30,8 @@ npm run start
 * Animated analog clocks visualized with trigonometry and timezone API
 * Search functionality, with auto-suggestions returning queries sorted by city population size
 * Current daylight information: lighter background = daylight, darker = nighttime
-* Persist queried data into MongoDB (max 12 items) and allow users to erase past queries
+* Persist queried data into MongoDB (max 12 items) 
+* Delete button for erasing persisted queries
 
 ## Framework + Programs + Libraries
 
