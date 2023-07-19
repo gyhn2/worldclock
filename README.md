@@ -43,5 +43,6 @@ npm run start
 
 
 ## Mobile view
+<img width="300" alt="mobile screenshot" src="https://github.com/gyhn2/worldclock/assets/80073085/1b6559cd-8276-4692-b447-8359f84e7e8b">
+https://github.com/gyhn2/worldclock/assets/80073085/1b6559cd-8276-4692-b447-8359f84e7e8b
 
-![IMG_0561](https://github.com/gyhn2/worldclock/assets/80073085/fcb60283-fa54-483c-b338-64a91cde2774)
