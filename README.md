@@ -32,16 +32,18 @@ npm run start
 
 ## Framework + Programs + Libraries
 
-* React.js
-* Express.js
-* Node.js
-* D3.js
-* MongoDB
+[x] React.js
+[x] Express.js
+[x] Node.js
+[x] D3.js
+[x] MongoDB
+[x] Mongoose
+[x] 
 
 ## API
-* Daylight info: https://sunrisesunset.io/api/
+* [Daylight info](https://sunrisesunset.io/api/)
 
-* Geodata: https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/information/?disjunctive.cou_name_en&sort=population
+* [Geodata](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/information/?disjunctive.cou_name_en&sort=population)
 
 
 ## Mobile view
