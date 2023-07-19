@@ -212,7 +212,7 @@ footer {
 
 /* smaller screens */
 @media screen and (max-width: 600px) {
-    .all {
+    #root {
         display: block;
     }
     h1 {
