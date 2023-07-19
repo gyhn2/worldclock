@@ -18,7 +18,7 @@ npm install
 npm run start
 ```
 
-3. When geodata file is read and inserted into DB, the app will be accessible at http://localhost:3000
+3. When the database is initialized and the geodata file is read and inserted into DB, the app will be accessible at http://localhost:3000
 
 * Frontend: `http://localhost:3000`
 * Backend: `hhtp://localhost:4000`
@@ -27,8 +27,8 @@ npm run start
 
 * Animated analog clocks visualized with trigonometry and timezone API
 * Search functionality, with auto-suggestions returning queries sorted by city population size
-* Displays current daylight information. Lighter background = daylight, darker = nighttime
-* Persist queried data in MongoDB
+* Current daylight information: lighter background = daylight, darker = nighttime
+* Persist queried data into MongoDB (max 12 items) and allow users to erase past queries
 
 ## Framework + Programs + Libraries
 
@@ -38,7 +38,7 @@ npm run start
 [x] D3.js
 [x] MongoDB
 [x] Mongoose
-[x] 
+[x] Axios
 
 ## API
 * [Daylight info](https://sunrisesunset.io/api/)
