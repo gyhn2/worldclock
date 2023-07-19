@@ -50,5 +50,5 @@ npm run start
 
 
 ## Mobile view
-<img width="300" alt="mobile screenshot" src="https://github.com/gyhn2/worldclock/assets/80073085/1b6559cd-8276-4692-b447-8359f84e7e8b">
+<img width="300" alt="mobile screenshot" src="https://github.com/gyhn2/worldclock/assets/80073085/6af66fc4-7fb7-47c9-a985-13d65d368afd">
 
