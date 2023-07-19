@@ -44,9 +44,9 @@ npm run start
 * Axios
 
 ## API
-* [Daylight info](https://sunrisesunset.io/api/)
+* [Daylight info: Sunset and Sunrise Times API](https://sunrisesunset.io/api/)
 
-* [Geodata](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/information/?disjunctive.cou_name_en&sort=population)
+* [Geodata by GeoNames (CC BY 4.0)](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/information/?disjunctive.cou_name_en&sort=population)
 
 
 ## Mobile view
