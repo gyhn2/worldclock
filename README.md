@@ -3,7 +3,8 @@
 A responsive world clock web application built with React + Express + MongoDB + D3. Consuming geodata and weather APIs to display analog and digital clocks for over 10000 cities.
 
 * [Demo](https://worldclock-frontend.vercel.app/)
-* 
+
+
 <img width="700" alt="Screenshot 2023-07-19 at 7 53 29 AM" src="https://github.com/gyhn2/worldclock/assets/80073085/52cf9212-c3fd-4859-bd94-1ccaad98198b">
 
 ## Installation
