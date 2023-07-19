@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm --prefix ./frontend install; npm --prefix ./backend install",
-    "frontend": "npm run dev --prefix frontend",
+    "frontend": "npm run start --prefix frontend",
     "backend": "npm start --prefix backend",
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "rm-modules": "rm -rf node_modules ; rm -rf ./backend/node_modules ; rm -rf ./frontend/node_modules",
