@@ -20,7 +20,44 @@ npm install
 npm run start
 ```
 
-3. When the database is initialized and the geodata file is read and inserted into DB, the app will be accessible at http://localhost:3000
+3. On the MongoDB Atlas website, go to the "Search" tab on your database. Then create a search index on the 'geodatas' collection, using the JSON Editor: 
+
+```
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ascii_name": [
+        {
+          "foldDiacritics": true,
+          "tokenization": "edgeGram",
+          "type": "autocomplete"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "cou_name_en": [
+        {
+          "foldDiacritics": true,
+          "tokenization": "edgeGram",
+          "type": "autocomplete"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "name": {
+        "foldDiacritics": true,
+        "tokenization": "edgeGram",
+        "type": "autocomplete"
+      }
+    }
+  }
+}
+```
+
+4. When the database is initialized and the geodata file is read and inserted into DB, the app will be accessible at http://localhost:3000
 
 * Frontend: `http://localhost:3000`
 * Backend: `hhtp://localhost:4000`
