@@ -1,3 +1,8 @@
+/* remove accents in string */
+function removeAccents(s) {
+    return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function regexReplace(query) {
     return query
             .replace(/a/g, '[a,à,á,â,ä,æ,ã,å,ā,ą,ă,A,À,Á,Â,Ä,Æ,Ã,Å,Ā,Ą,Ă]')
@@ -44,4 +49,4 @@ function regexReplace(query) {
             .replace(/R/g, '[r,R,ř,Ř]')
    }
 
-module.exports = { regexReplace };
+module.exports = { removeAccents };

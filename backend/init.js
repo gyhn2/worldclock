@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-// const insertData = require('./insertData');
-// const dotenv = require('dotenv').config();
 
 //db connect
 const connect = async () => {
@@ -19,5 +17,3 @@ const connect = async () => {
 }
 
 module.exports = connect
-// connect();
-// insertData();

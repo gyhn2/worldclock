@@ -1,9 +1,5 @@
 import { DateTime } from 'luxon';
 
-/* remove accents in string */
-export function removeAccents(s) {
-    return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
 
 /* format time */
 export function getDate(tz) {

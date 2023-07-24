@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, memo } from 'react'
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { getHours, getMinutes, getSeconds } from '../utils/utils.js';
 
@@ -18,7 +18,7 @@ const HOUR_NUM = [
     "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2"
 ]
 
-export default function Clock ({city}) {
+function Clock ({city}) {
     const ref = useRef(null);
     const tz = city.timezone;
 
@@ -33,14 +33,14 @@ export default function Clock ({city}) {
         hourTicks(clock)
         minutesTicks(clock)
         centreDot(clock)
+    },[])
+
+    useEffect( () => {
         const timer = setInterval(() => rotateHands(radians(tz)), 100)
         hands(radians(tz))
-
-        clock.selectAll("*").attr("shape-rendering", "geometricPrecision")
-
+        d3.select(ref.current).selectAll("*").attr("shape-rendering", "geometricPrecision")
         return () => clearInterval(timer);
-
-    },[ref])
+    }, [ref])
 
     //hours labels
     const labelHours = (clock) => {
@@ -187,3 +187,5 @@ export default function Clock ({city}) {
                 </svg>
             </div>
 }
+
+export default memo(Clock);

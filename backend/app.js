@@ -8,46 +8,99 @@ const connect = require('./init')
 const insertData = require('./insertData');
 const CityModel = require('./models/cityModel');
 const GeodataModel = require('./models/geodataModel');
+const { removeAccents } = require('./functions');
+
 
 const NUM_RESULTS = 10
 const MAX_LENGTH = 12
 
 connect();
 insertData();
-  
-app.use(cors())
+
+app.use(cors({
+    origin: process.env.ORIGIN
+}))
 app.use(express.json());
 app.set('trust proxy', 1);
 
 //fetch queries
 app.get('/api/query/:q', async (req, res) => {
     try {
-        let query = req.params.q.replace(/ /g, '[ ,-]')
-        const results = await GeodataModel
-            .find(
-            {
-                $or: [ 
-                    { ascii_name: 
-                        { 
-                            $regex: `^${query}`, $options: 'i' 
-                        }
-                    },
-                    {
-                        name: {
-                            $regex: `^${query}`, $options: 'i'          
-                        }
+        let query = removeAccents(
+            decodeURIComponent(req.params.q).toLowerCase())
+            .replace(/ /g, '[ ,-]')
+                    
+        const results = await GeodataModel.aggregate(
+            [ 
+                {
+                  $search: {
+                        index: "default",
+                        compound: [ {
+                            filter : [ {
+                                query,
+                                path: "ascii_name"
+                            } ]
+                        },
+                        
+                        {
+                            should: [
+                                {
+                                    phrase: {
+                                        query, 
+                                        path: "cou_name_en", 
+                                        score: { boost: { value: 10 } }
+                                    }
+                                },  
+                                // {
+                                //     phrase: {
+                                //         query, 
+                                //         path: "ascii_name", 
+                                //         score: { boost: { value: 3 } }
+                                //     }
+                                // },               
+                                {
+                                    autocomplete: {
+                                        query,
+                                        path: 'ascii_name'
+                                    },
+                                },
+                                {
+                                    autocomplete: {
+                                        query,
+                                        path: 'cou_name_en',
+                                        fuzzy: { maxEdits: 1 }
+                                    },
+                                },
+                                // {
+                                //     autocomplete: {
+                                //         query,
+                                //         path: 'name'
+                                //     },
+                                // },                       
+                            ]
+                        }]
                     }
-                    //search by country
-                    ,{ 
-                        cou_name_en: {
-                            $regex: `^${query}`, $options: 'i' 
-                        }
+                },
+                {
+                    $project: {
+                        _id: 1,
+                        name: 1,
+                        country_code: 1,
+                        cou_name_en: 1,
+                        timezone: 1,
+                        coordinates: 1,
+                        population: 1,
+                        score: { $meta: "searchScore" }
                     }
-                ]
-            }
-            )
-            .sort( { population: -1 } )
+                },
+                {
+                    $sort: { score: -1, population: -1 }
+                }
+            ])
             // .limit( NUM_RESULTS )
+
+        console.log(results.slice(0, 10))
+
         res.status(200).send(results)
     } catch (err) {
         res.status(400).send(err)

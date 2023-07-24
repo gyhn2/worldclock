@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { removeAccents, getFlags } from '../utils/utils.js';
+import { getFlags } from '../utils/utils.js';
 import axios from "axios"
 
 /* limit the number of predictive search results */
@@ -15,18 +15,21 @@ export default function Search({viewArray, setViewArray}) {
 
     useEffect( () => {
         // fetch search suggestions
-        const searchTimeout = setTimeout(() => {
-            let query = removeAccents(searchValue.toLowerCase().trim());
-            if (query.length > 1) {
-                axios.get(`/api/query/${query}`)
+            let searchTimeout;
+            if (searchValue.length > 0) {
+                searchTimeout = setTimeout(() => {
+                axios.get(`/api/query/${searchValue}`)
                 .then(data => {
-                    let y = data.data.map((x, i)=> {return {searchid: i, ...x}})
+                    let y = data.data.map((x, i) => {
+                        return {searchid: i, ...x}
+                    })
                     setSearchList(y)  
                     setLoading(false)  
                 })
                 .catch( err => console.log(err))
+            }, 150);
+
             }    
-        }, 150);
         return () => clearTimeout(searchTimeout);
 
     }, [setSearchList, searchValue, setLoading])
@@ -46,6 +49,17 @@ export default function Search({viewArray, setViewArray}) {
         return () => clearTimeout(arrowScroll);
 
     }, [highlighted])
+
+    const onInputChange = (e) => {
+        const sv = e.target.value.trim();
+        if (!sv.length) {
+            setFocused(false)
+            return;
+        } else {
+            setFocused(true)
+            setSearchValue(sv)
+        }
+    }
 
     const handleKeyDown = (e) => {
         // enter key
@@ -71,8 +85,9 @@ export default function Search({viewArray, setViewArray}) {
             if (highlighted === searchList.length-1)
                 return;
             setHighlighted(highlighted + 1)            
-        } else 
+        } else {
             setHighlighted(0)
+        }
     }
 
     // empty list on input focusout
@@ -107,7 +122,7 @@ export default function Search({viewArray, setViewArray}) {
                     type="search" 
                     id="search-bar" 
                     defaultValue={searchValue}
-                    onChange={e => setSearchValue(e.target.value)}
+                    onChange={onInputChange}
                     placeholder="Search for city or country" 
                     autoComplete="off" 
                     autoCorrect="off" 

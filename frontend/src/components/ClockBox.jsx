@@ -56,19 +56,21 @@ export default function ClockBox ({city, viewArray, setViewArray}) {
     const dayOrNight = (city) => {
         var now = DateTime.now();
         let col;
-        //day
-        if (daylight!={} && now > daylight.sunrise && now < daylight.sunset ) {
-            setNight(false)
-            col = DAY_COL
-        //night
-        } else if (daylight!={} && (now < daylight.sunrise || now > daylight.sunset)) {
-            setNight(true)
-            col = NIGHT_COL
+        if (daylight.sunset && daylight.sunrise) {
+            //day
+            if (now > daylight.sunrise && now < daylight.sunset ) {
+                setNight(false)
+                col = DAY_COL
+            //night
+            } else if (now < daylight.sunrise || now > daylight.sunset) {
+                setNight(true)
+                col = NIGHT_COL
+            }
         }
-            d3.select(`#clockbox-${city._id} .clock`).selectAll("line").attr("stroke", col)
-            d3.select(`#clockbox-${city._id} .clock`).select("svg").selectAll("text").attr("font-color",col)
-            d3.select(`#clockbox-${city._id} .clock`).selectAll("text").attr("fill", col)
-            d3.select(`#clockbox-${city._id} .clock`).select(".centre").attr("fill", col).attr("stroke", col)
+        d3.select(`#clockbox-${city._id} .clock`).selectAll("line").attr("stroke", col)
+        d3.select(`#clockbox-${city._id} .clock`).select("svg").selectAll("text").attr("font-color",col)
+        d3.select(`#clockbox-${city._id} .clock`).selectAll("text").attr("fill", col)
+        d3.select(`#clockbox-${city._id} .clock`).select(".centre").attr("fill", col).attr("stroke", col)
     }
 
     /* delete items to be displayed */

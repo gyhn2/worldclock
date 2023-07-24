@@ -7,7 +7,7 @@ const geodataSchema = new mongoose.Schema({
     },
     name: {
         required: true,
-        type: String 
+        type: String,
     },
     ascii_name: {
         required: true,
