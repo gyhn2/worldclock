@@ -35,12 +35,7 @@ app.get('/api/query/:q', async (req, res) => {
                 {
                   $search: {
                         index: "default",
-                        compound: [ {
-                            filter : [ {
-                                query,
-                                path: "ascii_name"
-                            } ]
-                        },
+                        compound: 
                         
                         {
                             should: [
@@ -78,7 +73,7 @@ app.get('/api/query/:q', async (req, res) => {
                                 //     },
                                 // },                       
                             ]
-                        }]
+                        }
                     }
                 },
                 {
