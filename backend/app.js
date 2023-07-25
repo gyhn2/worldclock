@@ -94,8 +94,6 @@ app.get('/api/query/:q', async (req, res) => {
             ])
             // .limit( NUM_RESULTS )
 
-        console.log(results.slice(0, 10))
-
         res.status(200).send(results)
     } catch (err) {
         res.status(400).send(err)
